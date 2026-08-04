@@ -1,3 +1,0 @@
-# Apex is canonical (see <link rel="canonical"> in each page).
-# Requires www.pin-me.dk to be attached to the Pages project as a custom domain.
-https://www.pin-me.dk/* https://pin-me.dk/:splat 301

@@ -30,11 +30,26 @@ Then open <http://localhost:4173>.
 uses the same format). `.html` extensions are stripped automatically, so
 `/privacy` and `/support` work without any redirect rules.
 
+The apex is canonical, so `www.pin-me.dk` needs to 301 to `pin-me.dk`. That
+**cannot** live in a `_redirects` file here: Cloudflare's asset deployer rejects
+absolute URLs (`Only relative URLs are allowed`, code 100324), and a relative
+rule can't match on hostname. Use a dashboard **Redirect Rule** on the zone
+instead — see the README section below.
+
+### www → apex redirect rule
+
+Cloudflare dashboard → `pin-me.dk` → Rules → Redirect Rules → Create rule:
+
+- **If**: Hostname equals `www.pin-me.dk`
+- **Then**: Dynamic redirect, 301, expression
+  `concat("https://pin-me.dk", http.request.uri.path)`
+- Preserve query string: on
+
 ## Before this goes live
 
 | What | Where | Currently |
 |---|---|---|
-| Domain | `<link rel="canonical">` and `og:url` in each page, plus `robots.txt` and `sitemap.xml` | `https://pin-me.dk` (apex is canonical; `www` should redirect to it) |
+| Domain | `<link rel="canonical">` and `og:url` in each page, plus `robots.txt` and `sitemap.xml` | `https://pin-me.dk` |
 | Contact address | `CONTACT_EMAIL` in `assets/site.js`, and the `mailto:` links in each footer | `pinme.dk@gmail.com` |
 | Email signup backend | `NOTIFY_ENDPOINT` in `assets/site.js` | empty — still a placeholder, see below |
 
@@ -94,7 +109,6 @@ privacy.html      privacy policy — required by App Store Connect
 support.html      support / FAQ — required by App Store Connect
 404.html
 _headers          security headers + font caching (Cloudflare Pages / Netlify)
-_redirects        www.pin-me.dk → pin-me.dk (301)
 robots.txt
 sitemap.xml
 assets/
