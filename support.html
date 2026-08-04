@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Support — Pin Me</title>
+    <meta
+      name="description"
+      content="Help with Pin Me: why a reminder didn't arrive, how the radius works, battery use, pausing reminders and deleting your data."
+    />
+    <link rel="canonical" href="https://pinme.app/support" />
+    <meta name="theme-color" content="#EFE7D6" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Support — Pin Me" />
+    <meta
+      property="og:description"
+      content="Answers to the common questions, and a real email address if none of them fit."
+    />
+    <meta property="og:url" content="https://pinme.app/support" />
+
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="preload" href="/assets/fonts/nunito-900.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/assets/fonts/nunito-600.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="wrap site-header">
+      <a class="logo" href="/">
+        <span class="logo-mark">
+          <svg width="21" height="27" viewBox="0 0 100 130" fill="none" aria-hidden="true">
+            <path
+              d="M50 6C26 6 7 25 7 49c0 30 43 74 43 74s43-44 43-74C93 25 74 6 50 6Z"
+              fill="#FFF4DE"
+              stroke="#1A1200"
+              stroke-width="9"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+        <span class="logo-word">Pin Me</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="/#howitworks">How it works</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/support" aria-current="page">Support</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <div class="wrap page-head">
+        <h1>Support</h1>
+        <p class="page-meta">
+          Most problems are one of the first three answers below. If none of
+          them fit, email
+          <a href="mailto:hello@pinme.app">hello@pinme.app</a> and you'll get a
+          reply from a person.
+        </p>
+      </div>
+
+      <div class="wrap prose">
+        <h2>Reminders</h2>
+
+        <h3>A reminder didn't arrive</h3>
+        <p>Work down this list — it's roughly in order of likelihood:</p>
+        <ul>
+          <li>
+            <strong>Background location isn't granted.</strong> Open Settings
+            inside Pin Me and check “Background location”. If it says
+            <em>Off</em>, reminders can only fire while the app is open. On iOS
+            the system permission needs to be “Always”, not “While Using the
+            App”.
+          </li>
+          <li>
+            <strong>Notifications are switched off.</strong> Also shown in the
+            app's Settings screen. Without it, Pin Me still records the visit
+            but has no way to tell you about it.
+          </li>
+          <li>
+            <strong>Reminders are paused.</strong> There's a single switch at
+            the top of Settings that pauses everything. It survives restarting
+            the app, so it's easy to forget it's on.
+          </li>
+          <li>
+            <strong>You were reminded recently.</strong> If a reminder for that
+            place already fired within the last 30 minutes, the next one is
+            suppressed. Standing near the edge of a place would otherwise
+            trigger a burst of notifications.
+          </li>
+          <li>
+            <strong>You have more than 20 places.</strong> See below.
+          </li>
+        </ul>
+
+        <h3>Why only 20 places at a time?</h3>
+        <p>
+          That's an iOS limit, not ours — the operating system will monitor at
+          most 20 regions per app, and silently ignores any beyond that. Rather
+          than let the system pick arbitrarily, Pin Me watches the 20 places
+          nearest to you and re-picks as you move. The home screen tells you
+          when you've crossed that line. You can save as many places as you
+          like; it only affects which ones are actively armed.
+        </p>
+
+        <h3>Choosing a radius</h3>
+        <p>
+          The radius is how close you need to get before the reminder fires.
+          Bigger is more reliable: phone positioning is accurate to somewhere
+          between a few metres and a few dozen, and it's worse in dense city
+          streets, indoors, and underground.
+        </p>
+        <ul>
+          <li>
+            <strong>50 m</strong> — for a specific doorway, when you'll be right
+            on top of it.
+          </li>
+          <li>
+            <strong>100–250 m</strong> — the sweet spot for most places. The
+            default is 250 m.
+          </li>
+          <li>
+            <strong>500 m–1 km</strong> — for “while I'm in this part of town”,
+            or for a place you drive past rather than walk to.
+          </li>
+        </ul>
+        <p>
+          If you're moving quickly — in a car or on a train — prefer a larger
+          radius. A small circle can be crossed and left again before the
+          operating system gets around to noticing.
+        </p>
+
+        <h3>The reminder came at the wrong moment</h3>
+        <p>
+          Geofence timing is handled by the operating system, and it trades
+          precision for battery life. A notification can arrive a minute or two
+          after you actually arrive. That's normal and not something the app can
+          override.
+        </p>
+
+        <h2>Battery and data</h2>
+
+        <h3>Will this drain my battery?</h3>
+        <p>
+          It shouldn't be noticeable. Pin Me doesn't poll your location or keep
+          GPS running. It hands your places to the operating system's own
+          geofencing service, which is built for exactly this and uses
+          low-power signals — cell towers and Wi-Fi — most of the time.
+        </p>
+
+        <h3>Does it use mobile data?</h3>
+        <p>
+          Only for map imagery when you have the map open. Reminders themselves
+          need no connection at all and work perfectly in airplane mode.
+        </p>
+
+        <h2>Your data</h2>
+
+        <h3>Where are my places stored?</h3>
+        <p>
+          On your phone, and nowhere else. There's no account and no server. The
+          <a href="/privacy">privacy policy</a> spells this out in full.
+        </p>
+
+        <h3>How do I delete everything?</h3>
+        <p>
+          Settings → <strong>Delete all data</strong> removes every place and
+          the entire reminder history. It can't be undone. Uninstalling the app
+          has the same effect.
+        </p>
+
+        <h3>Will my places move to a new phone?</h3>
+        <p>
+          Only if your new phone is set up from a device backup that includes
+          app data. There's no sync built into Pin Me, so a fresh install starts
+          empty.
+        </p>
+
+        <h3>Can I see the introduction again?</h3>
+        <p>
+          Yes — Settings → <strong>Show the intro again</strong>. Your saved
+          places aren't touched.
+        </p>
+
+        <h2>Still stuck?</h2>
+        <div class="callout">
+          <p>
+            Email <a href="mailto:hello@pinme.app">hello@pinme.app</a>. It helps
+            if you mention your phone model, your OS version, and what you
+            expected to happen instead.
+          </p>
+          <p>
+            Bug reports and feature requests are both welcome. Pin Me is made by
+            one person, so replies may take a couple of days — but they do
+            arrive.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="wrap site-footer">
+      <div class="logo">
+        <span class="footer-mark">
+          <svg width="15" height="19" viewBox="0 0 100 130" fill="none" aria-hidden="true">
+            <path
+              d="M50 6C26 6 7 25 7 49c0 30 43 74 43 74s43-44 43-74C93 25 74 6 50 6Z"
+              fill="#FFF4DE"
+              stroke="#1A1200"
+              stroke-width="11"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+        <span style="font-size: 17px; font-weight: 900; letter-spacing: -0.4px">Pin Me</span>
+      </div>
+
+      <div class="footer-links">
+        <a href="/privacy">Privacy policy</a>
+        <a href="/support">Support</a>
+        <a href="mailto:hello@pinme.app">hello@pinme.app</a>
+        <span>© <span data-year>2026</span></span>
+      </div>
+    </footer>
+
+    <script src="/assets/site.js"></script>
+  </body>
+</html>
