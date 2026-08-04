@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pinme.app/sitemap.xml
+Sitemap: https://pin-me.dk/sitemap.xml

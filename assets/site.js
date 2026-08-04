@@ -17,7 +17,7 @@
    ========================================================================== */
 
 const NOTIFY_ENDPOINT = "";
-const CONTACT_EMAIL = "hello@pinme.app";
+const CONTACT_EMAIL = "pinme.dk@gmail.com";
 
 const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 

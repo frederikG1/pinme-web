@@ -32,13 +32,11 @@ uses the same format). `.html` extensions are stripped automatically, so
 
 ## Before this goes live
 
-Three things are placeholders and need a real value:
-
 | What | Where | Currently |
 |---|---|---|
-| Domain | `<link rel="canonical">` and `og:url` in each page, plus `robots.txt` and `sitemap.xml` | `https://pinme.app` |
-| Contact address | `CONTACT_EMAIL` in `assets/site.js`, and the `mailto:` links in each footer | `hello@pinme.app` |
-| Email signup backend | `NOTIFY_ENDPOINT` in `assets/site.js` | empty — see below |
+| Domain | `<link rel="canonical">` and `og:url` in each page, plus `robots.txt` and `sitemap.xml` | `https://pin-me.dk` (apex is canonical; `www` should redirect to it) |
+| Contact address | `CONTACT_EMAIL` in `assets/site.js`, and the `mailto:` links in each footer | `pinme.dk@gmail.com` |
+| Email signup backend | `NOTIFY_ENDPOINT` in `assets/site.js` | empty — still a placeholder, see below |
 
 ### The notify-me form
 
@@ -96,6 +94,7 @@ privacy.html      privacy policy — required by App Store Connect
 support.html      support / FAQ — required by App Store Connect
 404.html
 _headers          security headers + font caching (Cloudflare Pages / Netlify)
+_redirects        www.pin-me.dk → pin-me.dk (301)
 robots.txt
 sitemap.xml
 assets/
