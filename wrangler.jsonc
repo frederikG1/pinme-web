@@ -1,0 +1,13 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "pinme-web",
+  "compatibility_date": "2026-08-04",
+  "observability": {
+    "enabled": true
+  },
+  // The site is plain static files, so the repo root is the assets directory.
+  // Non-site files are excluded in .assetsignore — see the note there.
+  "assets": {
+    "directory": "."
+  }
+}

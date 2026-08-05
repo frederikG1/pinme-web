@@ -16,7 +16,19 @@ python3 -m http.server 4173
 
 Then open <http://localhost:4173>.
 
-## Deploying to Cloudflare Pages
+## Deploying to Cloudflare
+
+Cloudflare now deploys this as a **Workers static-assets** project (`npx wrangler
+deploy`), not classic Pages. Two consequences worth knowing:
+
+- The assets directory is the repo root, so **every file in the repo is served
+  publicly** unless listed in `.assetsignore`. Without it, `/.git/config` and
+  the entire commit history are downloadable. Add anything non-site there.
+- `_redirects` may only contain relative URLs — see the www note below.
+
+`wrangler.jsonc` pins the settings so a build never re-runs auto-detection.
+
+## Deploying to Cloudflare Pages (classic)
 
 1. Push this repo to GitHub.
 2. Cloudflare dashboard → **Workers & Pages** → **Create** → **Pages** →

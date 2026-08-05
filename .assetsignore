@@ -1,0 +1,9 @@
+# Everything in the repo root is uploaded as a public asset, so anything
+# that is not part of the site has to be excluded here explicitly.
+# Without this, /.git/config and the whole commit history are served.
+.git
+.gitignore
+.wrangler
+.claude
+README.md
+wrangler.jsonc
