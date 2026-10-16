@@ -3,9 +3,6 @@
 Marketing site for **Pin Me** — the location-reminder app in the
 `location_reminder` repo.
 
-Static HTML, CSS and one small JS file. **No build step, no dependencies, no
-`node_modules`.** What is in the repo is exactly what gets served.
-
 ## Local preview
 
 Any static file server works:
