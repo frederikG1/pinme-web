@@ -1,4 +1,4 @@
-# pinme-web
+# [pinme-web](https://pin-me.dk/)
 
 Marketing site for **Pin Me** — the location-reminder app in the
 `location_reminder` repo.
