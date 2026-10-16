@@ -32,21 +32,6 @@ pyftsubset Nunito_900Black.ttf --output-file=assets/fonts/nunito-900.woff2 --fla
 
 Nunito is licensed under the SIL Open Font License 1.1.
 
-## Design notes
-
-The visual language is shared with the app ("Citrus"), and two rules carry over:
-
-- **Never rely on synthesised font weight.** Each Nunito weight is its own file
-  and its own `@font-face`.
-- **`#FF9500` is a fill colour only.** Orange text and icons use `#B05A00`; the
-  bright orange only reaches about 2.0:1 against the cream background, far
-  below WCAG AA.
-
-The source design lives in the Claude Design project "Pin Me — Landing". That
-export is a canvas preview (it pulls in a React runtime, `support.js`, and uses
-`{{ }}` template bindings) — it is a mock, not shippable markup, so this site is
-a hand-built translation of it rather than a copy.
-
 ## Files
 
 ```
